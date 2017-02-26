@@ -1,17 +1,17 @@
 # GS FEWD project
 
-### Task beyond that four hour mark
+### Tasks beyond the 4 hour mark
 - set-up/optimise SEO
 - set up analytics
 - Create and hook up internal page layouts
-- refine CSS
-- Modularise the sass into folders with @imports
+- Refine SCSS
+- Modularise the scss into folders with @imports
 - Flesh out text on blog cards and hook into blog database
-- include search field functionality with database
-- test cross-browser performance using BrowserStack
-- test on mobile devices using the BrowserSync external URLs
-- include CSS animations for: button rollovers; hero text; mobile menu; etc
-- progressive enhancement using: modernizr; @supports
+- Include search field functionality with database
+- Test cross-browser performance using BrowserStack
+- Test on mobile devices using the BrowserSync external URLs
+- Include CSS animations for: button rollovers; hero text; mobile menu; etc
+- Progressive enhancement using: modernizr; @supports
 
 
 ### Getting Started
