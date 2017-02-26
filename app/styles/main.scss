@@ -1,12 +1,8 @@
-
 @import "reset";
-
 // BREAKPOINT MIXIN
-
 $small: 768px;
 $medium: 1024px;
 $large: 1200px;
-
 @mixin media($class) {
     @if $class==sm {
         @media (min-width: $small) {
@@ -25,25 +21,18 @@ $large: 1200px;
     }
 }
 
-
-
 ////////////////////////////////////
 // BASE STYLES
 ////////////////////////////////////
-
 //color variables
-
 $color-orange: #f17231;
 $color-over: #00c5d7;
 $color-grey: #888888;
 $color-text: black;
-
-
 body {
     line-height: 1.5;
     letter-spacing: .2px;
     font-family: 'Open Sans', sans-serif;
-    color: #333;
 }
 
 a {
@@ -54,9 +43,13 @@ h1 {
     color: white;
     font-size: 3em;
     font-weight: 300;
+    span {
+        color: $color-orange;
+    }
 }
 
 h2 {
+    color: $color-orange;
     font-size: 2em;
     font-weight: 300;
 }
@@ -67,6 +60,7 @@ h3 {
 }
 
 h4 {
+    color: $color-orange;
     line-height: .3;
     font-size: 1.3em;
     font-weight: 300;
@@ -84,21 +78,160 @@ h6 {
     font-weight: 300;
 }
 
+.hide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
 ////////////////////////////////////
 // layout styles
 ////////////////////////////////////
+// buttons
+.button__outline--white,
+.button__outline--orange {
+    display: inline-block;
+    cursor: pointer;
+    font-size: .8em;
+    letter-spacing: .8px;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    color: white;
+    &:hover {
+        background: white;
+        color: $color-orange;
+    }
+}
 
+.button__outline--orange {
+    padding: 10px 50px;
+    margin: 0 0 20px;
+    border: 1px solid $color-orange;
+    color: $color-text;
+    &:hover {
+        background: $color-orange;
+        color: white;
+    }
+}
 
-
-
+//top bar
+.header {
+    width: 100%;
+    background: white;
+    z-index: 2;
+    top: 0;
+    text-align: center;
+    min-height: 100px;
+    @include media(md) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
 .intro-statement {
-    padding: 30PX 0;
+    padding: 30px 30px;
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
+    @include media(sm) {
+  }
 }
 
+// nav
+
+nav {
+    padding: 20px 0 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+    display: none;
+    a {
+        display: block;
+        cursor: pointer;
+        padding: 20px 0;
+        border: 1px solid white;
+        background: $color-orange;
+        color: white;
+    }
+    a:active {
+        background: $color-grey;
+    }
+    @include media(sm) {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        font-weight: 600;
+        font-size: 1.2em;
+        a {
+            margin-left: 30px;
+            padding: 0;
+            border: none;
+            background: none;
+            color: $color-text;
+        }
+        a:hover {
+            color: $color-orange;
+        }
+    }
+    @include media(md) {
+        padding: 45px 45px 0 0;
+    }
+}
+
+.gs-logo {
+    margin: 23px 0 23px 10px;
+    height: 80px;
+    @include media(sm) {
+        margin: 15px 0 35px 10px;
+    }
+    @include media(md) {
+        margin: 10px 0 20px 10px;
+    }
+}
+
+.mobile-nav {
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    fill: $color-grey;
+    @include media(sm) {
+        display: none;
+    }
+}
+
+// remove the search icon in mobile nav and enable in top left
+nav :nth-child(7) {
+    display: none;
+    @include media(sm) {
+        display: inline-block;
+    }
+}
+
+.mobile-search {
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    fill: $color-grey;
+    @include media(sm) {
+        display: none;
+    }
+}
+
+.search-icon {
+    width: 30px;
+    height: 30px;
+}
+
+// slick slider area
 .hero {
     overflow: hidden;
     position: relative;
@@ -144,4 +277,131 @@ h6 {
     }
 }
 
+.services {
+    text-align: center;
+    padding: 20px 0;
+    background: #eee;
+}
 
+.services__cards {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    div {
+        margin: 50px;
+    }
+    p {
+        padding: 0 30px;
+    }
+    svg {
+        height: 100px;
+        width: 100px;
+    }
+    @include media(sm) {
+        margin: 50px auto;
+        display: flex;
+        div {
+            margin: 0;
+        }
+    }
+}
+
+.blog {
+    position: relative;
+    text-align: center;
+    padding: 20px 0 40px;
+    .slick-dots {
+        bottom: 490px;
+    }
+}
+
+.blog__slick {
+    max-width: 1200px;
+    position: absolute;
+    margin: 0 auto;
+    height: 100%;
+    .blog__card {
+        text-align: left;
+        height: 400px;
+        margin: 80px 20px 40px;
+        border: 1px solid #ebebeb;
+        box-shadow: 0 2px 3px #ccc;
+        .blog__image-- {
+            background: red;
+            height: 180px;
+        }
+        h5 {
+            margin: 20px;
+        }
+        p {
+            margin: 20px;
+        }
+    }
+}
+
+.prev,
+.next {
+    position: absolute;
+    z-index: 1;
+    top: 300px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev {
+    transform: rotate(180deg);
+    left: 20px;
+}
+
+#chev {
+    fill: none;
+    stroke: $color-text;
+}
+
+footer {
+    background: $color-orange;
+    padding: 30px 20px 10px;
+    h3,
+    h5,
+    h6,
+    p {
+        line-height: 1.2em;
+        color: white;
+    }
+    .footer__top {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .footer__bottom {
+        text-align: center;
+        display: block;
+        a {
+            padding: 30px 7px;
+        }
+        svg {
+            stroke: white;
+            fill: $color-orange;
+            width: 25px;
+            height: 25px;
+        }
+        .footer__bottom--icons {
+            display: flex;
+            justify-content: center;
+        }
+      @include media(sm) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+}
+
+// slick overrides
+.slick-dots li {
+    z-index: 5;
+}
