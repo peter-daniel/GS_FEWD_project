@@ -1,18 +1,131 @@
 <!doctype html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GS_FEWD_project</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+</head>
 
-  </head>
-  <body>
+<body>
     <div class="container">
+        <div class="header">
+            <div class="gs-logo">
+                <!-- icon -->
+            </div>
+            <nav>
+                <a>Home</a>
+                <a>About</a>
+                <a>Work</a>
+                <a>Services</a>
+                <a>Blog</a>
+                <a>Contact</a>
+                <a>search icon</a>
+            </nav>
+        </div>
+        <div class="hero">
+            <div class="hero__overlay">
+                <h1>We Create Digital Experiences that matter</h1>
+            </div>
+            <div class="hero__slick">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="intro-statement">
+            <h3>Get Started is proud to have been creating digital experiences for 16 years. With a portfolio that includes some of the biggest names in Australian government, retail and the corporate sector, our knowledge and understanding of the digital world is well recognised.</h3>
+        </div>
+        <div class="services">
+            <h2>Services</h2>
+            <div class="services__cards">
+                <div>
+                    <div>
+                        <!-- icon -->
+                    </div>
+                    <h4>Strategy</h4>
+                    <p>We aim to deliver actionable strategic advice and solutions that transform your user's digital experiences.</p>
+                </div>
+                <div>
+                    <div>
+                        <!-- icon -->
+                    </div>
+                    <h4>Design</h4>
+                    <p>Our award-winning design team are committed to quality and user experience.</p>
+                </div>
+                <div>
+                    <div>
+                        <!-- icon -->
+                    </div>
+                    <h4>Development</h4>
+                    <p>Our development team can help you and your organisation with any complex technical problem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="blog">
+            <h2>Blog</h2>
+            <div class="blog__slick">
+                <div class='blog__card'>
+                    <div class="blog__image--"></div>
+                    <h5>Hook into blog database for text </h5>
+                    <p>Duo ut inermis epicuri, sed cibo minimum eu, at iudico persecuti duo. Omnis dissentiunt eos ne...</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer__top">
+                <h3>Are you ready to redefine your own customers' experience?</h3>
+                <h5>Melbourne, Sydney, Brisbane</h5>
+                <p>1300 554 891 (+61 3 9993 4402), info@getstarted.com.au</p>
+            </div>
+            <div class="footer__bottom">
+                <div>
+                    <h6>©2016 Get Started. All Rights Reserved. Site Map . Privacy . T’s & C’s.</h6>
+                </div>
+                <div class="footer__bottom--icons">
+                    <h6>Follow Us</h6>
+                    <a href="">
+                        <div>
+                            <!-- icon -->
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <!-- icon -->
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <!-- icon -->
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <!-- icon -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="scripts/main.js"></script>
-  </body>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.hero__slick').slick({
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+    });
+    </script>
+</body>
+
 </html>
