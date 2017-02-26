@@ -343,11 +343,15 @@ nav :nth-child(7) {
 .prev,
 .next {
     position: absolute;
+    visibility: hidden;
     z-index: 1;
     top: 300px;
     width: 70px;
     height: 70px;
     cursor: pointer;
+  @include media(md) {
+    visibility: visible;
+  }
 }
 
 .next {
@@ -396,6 +400,7 @@ footer {
         }
       @include media(sm) {
         display: flex;
+        flex-direction: row-reverse;
         justify-content: space-between;
       }
     }
